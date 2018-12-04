@@ -1,0 +1,18 @@
+import example.*
+
+describe "Punto 1"{
+	test "a" {
+	const ragnar = new Soldado("Karl")
+	ragnar.vidasCobradas(30)
+	ragnar.armas(10)
+	const abc = new Expedicion()
+	assert.equals(true,abc.subirVikingo(ragnar))
+	
+	}	
+	test "b"{
+		const lodbrock = new Soldado("Jarl")
+		lodbrock.armas(10)
+		const abc = new Expedicion()
+		assert.equals(false,abc.subirVikingo(lodbrock))
+	}
+}
