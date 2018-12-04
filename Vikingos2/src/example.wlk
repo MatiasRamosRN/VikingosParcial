@@ -26,6 +26,8 @@ class Soldado inherits Vikingo{
 	}
 	
 	method ascender(){
+		ascencion.ascender(claseSocial,self)
+		/* 
 		if(claseSocial.equals("Jarl")){
 			self.nuevaClase("Karl")
 			self.sumarArmas(10)
@@ -36,6 +38,8 @@ class Soldado inherits Vikingo{
 		else{
 			throw new UserException("Usted ya no puede ascender")
 		}
+		 */
+	
 	}
 	
 	method sumarArmas(valor){
@@ -51,6 +55,8 @@ class Granjero inherits Vikingo{
 		return (return (hijos<=hectareas/2))
 	}
 	method ascender(){
+		ascencion.ascender(claseSocial,self)
+		/* 
 			if(claseSocial.equals("Jarl")){
 			self.nuevaClase("Karl")
 			self.sumarHijos(2)
@@ -62,6 +68,7 @@ class Granjero inherits Vikingo{
 		else{
 			throw new UserException("Usted ya no puede ascender")
 		}
+		*/
 	}
 	method sumarHijos(valor){
 		hijos += valor
@@ -69,6 +76,22 @@ class Granjero inherits Vikingo{
 	
 	method sumarHectareas(valor){
 		hectareas += valor
+	}
+}
+
+object ascencion{
+	method ascender(claseSocial,vikingo){
+			if(claseSocial.equals("Jarl")){
+			vikingo.nuevaClase("Karl")
+			vikingo.sumarHijos(2)
+			vikingo.sumarHectareas(2)
+		}
+		if(claseSocial.equals("Karl")){
+			vikingo.nuevaClase("Thrall")
+		}
+		else{
+			throw new UserException("Usted ya no puede ascender")
+		}
 	}
 }
 
